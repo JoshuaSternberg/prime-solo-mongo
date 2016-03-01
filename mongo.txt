@@ -1,0 +1,26 @@
+1.	db.createCollection('orders')
+
+2. 	
+
+db.orders.insert({orderDate: new Date('Sep 04, 2015'), orderTotal: 500, lineItems: [{unitPrice: 5, quantity: 9, productName: 'banana'}]})
+
+
+db.orders.insert({orderDate: new Date('Dec 24, 2015'), orderTotal: 268, lineItems: [{unitPrice: 8, quantity: 16, productName: 'apple'}]})
+
+
+db.orders.insert({orderDate: new Date('January 13, 2015'), orderTotal: 101, lineItems: [{unitPrice: 4, quantity: 11, productName: 'kiwi'}]})
+
+
+3.	db.orders.findOne()
+
+
+4.	db.orders.find().pretty()
+
+
+5.	db.getCollection('orders').find({orderDate: {$lt: new Date('1/1/2016')}})
+
+
+6.	db.getCollection('orders').find({orderDate: {$gt: new Date('1/1/2016')}})
+
+
+7.	db.getCollection('orders').find({$and: [{'lineItems.quantity': {$gt: 5}}, {'lineItems.quantity': {$lt: 50}}]})
